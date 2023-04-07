@@ -313,7 +313,9 @@ function displaySearchResults(results) {
     const div = document.createElement("div");
     div.classList.add("card");
     div.innerHTML = `
-      <a href="movie-details.html?id=${result.id}">
+      <a href="${
+        global.search.type == "movie" ? "movie-details.html" : "tv-details.html"
+      }?id=${result.id}">
       ${
         result.poster_path
           ? `<img
