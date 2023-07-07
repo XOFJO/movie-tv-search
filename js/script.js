@@ -87,9 +87,14 @@ async function displayPopularMovie() {
       }
       </a>
       <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-star text-secondary"></i> ${
+        result.vote_average
+      } / 10</h5>
         <h5 class="card-title">${result.title}</h5>
+ 
         <p class="card-text">
           <small class="text-muted">Release: ${result.release_date}</small>
+
         </p>
       </div>
     `;
@@ -120,6 +125,9 @@ async function displayPopularTV() {
       }
       </a>
       <div class="card-body">
+      <h5 class="card-title"><i class="fas fa-star text-secondary"></i> ${
+        result.vote_average
+      } / 10</h5>
         <h5 class="card-title">${result.name}</h5>
         <p class="card-text">
           <small class="text-muted">Air Date: ${result.first_air_date}</small>
@@ -374,6 +382,10 @@ function displaySearchResults(results) {
       }
       </a>
       <div class="card-body">
+        <h5 class="card-title"><i class="fas fa-star text-secondary"></i> ${
+          result.vote_average
+        } / 10
+             </h5>
         <h5 class="card-title">${
           global.search.type == 'movie' ? result.title : result.name
         }</h5>
