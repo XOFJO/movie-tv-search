@@ -11,85 +11,113 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="lib/fontawesome.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/spinner.css" />
     <script src="js/script.js" defer></script>
-    <title>Flixx | Search Movies & Shows</title>
+    <title>Search Movies & Shows</title>
   </head>
-  <body>
-    <header class="main-header">
-      <div class="container">
-        <div class="logo"><a href="/">FLIXX</a></div>
-        <nav>
+  <body class="no-sidebar is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <div id="header" class="header-extend">
+        <!-- Inner -->
+        <div class="inner">
+          <header></header>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
           <ul>
-            <li>
-              <a class="nav-link" href="/">Movies</a>
-            </li>
-            <li>
-              <a class="nav-link" href="/shows.html">TV Shows</a>
-            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#banner">Movies</a></li>
+            <li><a href="shows.html">TV shows</a></li>
           </ul>
         </nav>
       </div>
-    </header>
 
-    <!-- Search Movies -->
-    <section class="search">
-      <div class="container">
-        <div id="alert"></div>
-        <form action="/search.html" class="search-form">
-          <div class="search-radio">
-            <input type="radio" id="movie" name="type" value="movie" checked />
-            <label for="movies">Movies</label>
-            <input type="radio" id="tv" name="type" value="tv" />
-            <label for="shows">TV Shows</label>
+      <!-- Main -->
+      <div class="wrapper style1">
+        <div class="container">
+          <h2 id="search-title">Search results</h2>
+          <div class="search-container search-page">
+            <div id="alert"></div>
+            <form action="/search.html" class="search-form">
+              <!-- movies and shows radio box -->
+              <div class="search-radio-box">
+                <input
+                  type="radio"
+                  id="movie"
+                  name="type"
+                  value="movie"
+                  class="search-radio"
+                  checked
+                />
+                <label for="movies">Movies</label>
+                <input
+                  type="radio"
+                  id="tv"
+                  name="type"
+                  value="tv"
+                  class="search-radio"
+                />
+                <label for="shows">TV Shows</label>
+              </div>
+              <div class="search-flex">
+                <input
+                  type="text"
+                  name="search-term"
+                  id="search-term"
+                  placeholder="Enter search term"
+                />
+                <button class="btn search-btn" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
           </div>
-          <div class="search-flex">
-            <input
-              type="text"
-              name="search-term"
-              id="search-term"
-              placeholder="Enter search term"
-            />
-            <button class="btn" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
 
-    <!-- Search Results -->
-    <section id="search-results-wrapper" class="container">
-      <heading id="search-results-heading"></heading>
-      <div id="search-results" class="grid"></div>
-      <div id="pagination">
-        <div class="pagination">
-          <button class="btn btn-primary" id="prev">Prev</button>
-          <button class="btn btn-primary" id="next">Next</button>
-          <div class="page-counter">Page 1 of 5</div>
+          <!-- search results -->
+          <section id="search-results-wrapper" class="container">
+            <heading id="search-results-heading"></heading>
+            <div id="search-results" class="grid"></div>
+            <div id="pagination">
+              <div class="pagination">
+                <button class="btn btn-primary" id="prev">Prev</button>
+                <button class="btn btn-primary" id="next">Next</button>
+                <div class="page-counter">Page 1 of 5</div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-      <div class="container">
-        <div class="logo"><span>FLIXX</span></div>
-        <div class="social-links">
-          <a href="https://www.facebook.com" target="_blank"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="https://www.twitter.com" target="_blank"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href="https://www.instagram.com" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
+      <!-- Footer -->
+      <div id="footer">
+        <div class="container">
+          <div class="row"></div>
+          <div class="row">
+            <div class="col-12">
+              <!-- Copyright -->
+              <div class="copyright">
+                <ul class="menu">
+                  <li>&copy; Yiheng Ding. All rights reserved.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
-
+    </div>
     <div class="spinner"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

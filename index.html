@@ -12,97 +12,144 @@
     />
     <link rel="stylesheet" href="lib/swiper.css" />
     <link rel="stylesheet" href="lib/fontawesome.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/spinner.css" />
+    <noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
     <script src="lib/swiper.js"></script>
     <script src="js/script.js" defer></script>
-    <title>Flixx</title>
+    <title>Movie & TV Search</title>
   </head>
-  <body>
-    <header class="main-header">
-      <div class="container">
-        <div class="logo"><a href="/">FLIXX</a></div>
-        <nav>
+  <body class="homepage is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <div id="header">
+        <!-- Inner -->
+        <div class="inner">
+          <header class="home-header">
+            <div class="search-container">
+              <div id="alert"></div>
+              <form action="/search.html" class="search-form">
+                <!-- movies and shows radio box -->
+                <div class="search-radio-box">
+                  <input
+                    type="radio"
+                    id="movie"
+                    name="type"
+                    value="movie"
+                    class="search-radio"
+                    checked
+                  />
+                  <label for="movies">Movies</label>
+                  <input
+                    type="radio"
+                    id="tv"
+                    name="type"
+                    value="tv"
+                    class="search-radio"
+                  />
+                  <label for="shows">TV Shows</label>
+                </div>
+                <div class="search-flex">
+                  <input
+                    type="text"
+                    name="search-term"
+                    id="search-term"
+                    placeholder="Enter search term"
+                  />
+                  <button class="btn search-btn" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+            <p>Scroll down to see more recommended content.</p>
+          </header>
+          <footer></footer>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
           <ul>
-            <li>
-              <a class="nav-link" href="/">Movies</a>
-            </li>
-            <li>
-              <a class="nav-link" href="/shows.html">TV Shows</a>
-            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#banner">Movies</a></li>
+            <li><a href="shows.html">TV shows</a></li>
           </ul>
         </nav>
       </div>
-    </header>
 
-    <!-- Now Playing Section -->
-    <section class="now-playing">
-      <h2>Now Playing</h2>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <!-- <div class="swiper-slide">
-            <a href="movie-details.html?id=1">
-              <img src="./images/no-image.jpg" alt="Movie Title" />
-            </a>
-            <h4 class="swiper-rating">
-              <i class="fas fa-star text-secondary"></i> 8 / 10
-            </h4>
-          </div> -->
+      <!-- Banner -->
+      <section id="banner">
+        <header>
+          <h2>Now playing</h2>
+          <br />
+          <div class="swiper">
+            <div class="swiper-wrapper"></div>
+          </div>
+
+          <p>Find the best movies and TV shows here and enjoy your time!</p>
+        </header>
+      </section>
+
+      <!-- Carousel -->
+      <section class="playing-slider">
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <!-- <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div> -->
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </section>
+
+      <!-- display popular movies -->
+      <div class="wrapper style1">
+        <section id="features" class="container special">
+          <header>
+            <h2>Popular Movies</h2>
+            <div id="popular-movies" class="grid"></div>
+          </header>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <div id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!-- Contact -->
+
+              <!-- Copyright -->
+              <div class="copyright">
+                <ul class="menu">
+                  <li>&copy; Yiheng Ding. All rights reserved.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- Search Movies -->
-    <section class="search">
-      <div class="container">
-        <div id="alert"></div>
-        <form action="/search.html" class="search-form">
-          <!-- movies and shows radio box -->
-          <div class="search-radio">
-            <input type="radio" id="movie" name="type" value="movie" checked />
-            <label for="movies">Movies</label>
-            <input type="radio" id="tv" name="type" value="tv" />
-            <label for="shows">TV Shows</label>
-          </div>
-          <div class="search-flex">
-            <input
-              type="text"
-              name="search-term"
-              id="search-term"
-              placeholder="Enter search term"
-            />
-            <button class="btn" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- Popular Movies -->
-    <section class="container">
-      <h2>Popular Movies</h2>
-      <div id="popular-movies" class="grid"></div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="main-footer">
-      <div class="container">
-        <div class="logo"><span>FLIXX</span></div>
-        <div class="social-links">
-          <a href="https://www.facebook.com" target="_blank"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="https://www.twitter.com" target="_blank"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href="https://www.instagram.com" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
-        </div>
-      </div>
-    </footer>
-
+    </div>
     <div class="spinner"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
