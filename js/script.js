@@ -452,6 +452,9 @@ function init() {
     case '/shows.html':
       displayPopularTV();
       break;
+    case '/shows':
+      displayPopularTV();
+      break;
     case '/tv-details.html':
       displayShowDetails();
       break;
