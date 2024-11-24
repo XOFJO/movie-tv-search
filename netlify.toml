@@ -1,0 +1,2 @@
+[build.environment]
+NETLIFY_CLEAN_URLS = "false"
